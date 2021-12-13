@@ -1,0 +1,67 @@
+<form [formGroup]="dataForm" 
+class="login100-form" 
+autocomplete="off"
+class="text-layout mt-2">
+
+<div class="p-fluid p-formgrid grid text-layout">
+  <div class="p-field col-12 md:col-6">
+      <label> Nombre</label>
+      <input type="text" 
+             pInputText       
+             formControlName="nombre"> 
+  </div>
+  <div class="errorvalidacion" class="p-field col-12 ">
+    <label *ngIf="dataForm.controls['nombre'].errors && (dataForm.controls['nombre'].dirty || dataForm.controls['nombre'].touched)">
+         Campo invalido, por favor valide la información
+    </label>
+  </div> 
+
+  <div class="p-field col-12 md:col-6">
+      <label >Email</label>
+      <input type="email" 
+             pInputText
+             formControlName="correo"> 
+  </div>
+  <div class="errorvalidacion" class="p-field col-12 ">
+    <label *ngIf="dataForm.controls['correo'].errors && (dataForm.controls['correo'].dirty || dataForm.controls['correo'].touched)">
+         Campo invalido, por favor valide la información
+    </label>
+  </div> 
+  
+  <div class="p-field col-12 md:col-6">
+      <label>Phone</label>
+      <input type="number" 
+             pInputText
+             formControlName="celular"> 
+  </div>
+  <div class="errorvalidacion" class="p-field col-12 ">
+    <label *ngIf="dataForm.controls['celular'].errors && (dataForm.controls['celular'].dirty || dataForm.controls['celular'].touched)">
+         Campo invalido, por favor valide la información
+    </label>
+  </div> 
+
+  <div class="p-field col-12 md:col-6">
+      <label>Entidad</label>
+      <input type="text" 
+             pInputText
+             formControlName="entidad">
+  </div> 
+  <div class="errorvalidacion" class="p-field col-12 ">
+    <label *ngIf="dataForm.controls['entidad'].errors && (dataForm.controls['entidad'].dirty || dataForm.controls['entidad'].touched)">
+         Campo invalido, por favor valide la información
+    </label>
+  </div> 
+
+  <div class="p-field col-12 ">
+
+      <button pButton type="button"
+              icon="pi pi-check "
+              label="Create" 
+              class="p-button-outlined p-button-success"
+              (click)="SaveRecord()">
+      </button>
+  </div>
+
+</div>
+</form>
+

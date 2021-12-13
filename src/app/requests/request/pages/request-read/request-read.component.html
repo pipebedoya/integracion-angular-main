@@ -1,0 +1,59 @@
+<!-- <div class="card" >
+
+    <p-toolbar styleClass="p-mb-4">
+        <ng-template pTemplate="left">
+            <button pButton pRipple label="New" 
+                    icon="pi pi-plus" 
+                    class="p-button-success p-mr-2"
+                    routerLink="/requests/request-create">
+            </button>
+        </ng-template>
+    </p-toolbar>
+
+
+        <p-table [value]="recordList">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Fecha Radicado</th>
+                    <th>Nombre Trabajo</th>
+                    <th>Descripcion</th>
+                    <th>Tipo Solicitud</th>
+                    <th>Modalidad</th>
+                    <th>Area Investigacion</th>
+                    <th>Estado</th>
+                    <th>Opciones</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-request>
+                <tr>
+                    <td>{{request.fecha_radicado}}</td>
+                    <td>{{request.nombre_trabajo}}</td>
+                    <td>{{request.descripcion}}</td>
+                    <td>{{request.id_tiposolicitud}}</td>
+                    <td>{{request.id_modalidad}}</td>
+                    <td>{{request.id_areainvestigacion}}</td>
+                    <td>{{request.id_estado}}</td>
+                    <td>
+                        <button pButton pRipple icon="pi pi-pencil" 
+                                class="p-button-rounded p-button-success p-mr-2"
+                                style="margin-right: 5px;"
+                                type="button"
+                                [routerLink]="['/request/request-update', proponente.id]" 
+                                >
+                        </button>
+                        <button pButton pRipple icon="pi pi-trash" 
+                                class="p-button-rounded p-button-warning"
+                                type="button"
+                                [routerLink]="['/request/request-delete', proponente.id]" 
+                                >
+                        </button>
+                    </td>
+                    
+                </tr>
+            </ng-template>
+        </p-table>
+
+</div>
+
+<router-outlet></router-outlet>
+ -->
