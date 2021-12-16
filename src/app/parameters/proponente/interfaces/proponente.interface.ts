@@ -8,4 +8,5 @@ export class Proponente {
     correo?:            string;
     celular?:           string;
     fotografia?:        string;
+    id_tipovinculacion?:  number;
 }

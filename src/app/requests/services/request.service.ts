@@ -1,9 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { environment } from 'src/environments/environment';
 import { Solicitud } from '../request/interfaces/request.interface';
+import { UploadedFile } from '../request/interfaces/uploaded.file.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -70,7 +71,23 @@ export class RequestService {
       })
     });
   }
+  
+  UploadDocument(form: FormData): Observable<UploadedFile>{
+    return this.http.post<UploadedFile>(`${this.url}/CargarDocumentoPersona`,
+   form,
+    {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${this.tk}`
+      })
+    });
+   }
 
+     download(trabajo: string): Observable<Blob>{
+       return   this.http.get(`${this.url}/archivo/1/${trabajo}`,{
+        responseType: 'blob'
+      });
+    }
 
+  
 
 }

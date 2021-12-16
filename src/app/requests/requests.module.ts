@@ -8,6 +8,9 @@ import { RequestCreateComponent } from './request/pages/request-create/request-c
 import { RequestDeleteComponent } from './request/pages/request-delete/request-delete.component';
 import { RequestUpdateComponent } from './request/pages/request-update/request-update.component';
 import { RequestReadComponent } from './request/pages/request-read/request-read.component';
+import { FileUploadModule } from 'primeng/fileupload';
+import { RecibirRespuestaComponent } from './respuesta/pages/recibir-respuesta/recibir-respuesta.component';
+
 
 
 
@@ -16,14 +19,16 @@ import { RequestReadComponent } from './request/pages/request-read/request-read.
     RequestCreateComponent,
     RequestDeleteComponent,
     RequestUpdateComponent,
-    RequestReadComponent
+    RequestReadComponent,
+    RecibirRespuestaComponent
   ],
   imports: [
     CommonModule,
     RequestsRoutingModule,
     PrimeNgModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FileUploadModule
   ]
 })
 export class RequestsModule { }

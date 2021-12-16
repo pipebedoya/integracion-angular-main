@@ -33,6 +33,14 @@ import { ProponenteCreateComponent } from './proponente/pages/proponente-create/
 import { ProponenteDeleteComponent } from './proponente/pages/proponente-delete/proponente-delete.component';
 import { ProponenteReadComponent } from './proponente/pages/proponente-read/proponente-read.component';
 import { ProponenteUpdateComponent } from './proponente/pages/proponente-update/proponente-update.component';
+import { EstadoCreateComponent } from './estado/pages/estado-create/estado-create.component';
+import { EstadoDeleteComponent } from './estado/pages/estado-delete/estado-delete.component';
+import { EstadoUpdateComponent } from './estado/pages/estado-update/estado-update.component';
+import { EstadoReadComponent } from './estado/pages/estado-read/estado-read.component';
+import { TipoSolicitudCreateComponent } from './tipo-solicitud/pages/tipo-solicitud-create/tipo-solicitud-create.component';
+import { TipoSolicitudDeleteComponent } from './tipo-solicitud/pages/tipo-solicitud-delete/tipo-solicitud-delete.component';
+import { TipoSolicitudUpdateComponent } from './tipo-solicitud/pages/tipo-solicitud-update/tipo-solicitud-update.component';
+import { TipoSolicitudReadComponent } from './tipo-solicitud/pages/tipo-solicitud-read/tipo-solicitud-read.component';
 
 const routes: Routes = [
   {
@@ -70,7 +78,19 @@ const routes: Routes = [
       { path: 'proponente-create', component: ProponenteCreateComponent },
       { path: 'proponente-delete/:id', component: ProponenteDeleteComponent },
       { path: 'proponente-update/:id', component: ProponenteUpdateComponent },
-      { path: 'proponente-read', component: ProponenteReadComponent} 
+      { path: 'proponente-read', component: ProponenteReadComponent},
+      { path: 'estado-create', component: EstadoCreateComponent },
+      { path: 'estado-delete/:id', component: EstadoDeleteComponent },
+      { path: 'estado-update/:id', component: EstadoUpdateComponent },
+      { path: 'estado-read', component: EstadoReadComponent},
+      { path: 'tipo-solicitud-create', component: TipoSolicitudCreateComponent },
+      { path: 'tipo-solicitud-delete/:id', component: TipoSolicitudDeleteComponent },
+      { path: 'tipo-solicitud-update/:id', component: TipoSolicitudUpdateComponent },
+      { path: 'tipo-solicitud-read', component: TipoSolicitudReadComponent},
+      { path: 'proponente-create', component: ProponenteCreateComponent },
+      { path: 'proponente-delete/:id', component: ProponenteDeleteComponent },
+      { path: 'proponente-update/:id', component: ProponenteUpdateComponent },
+      { path: 'proponente-read', component: ProponenteReadComponent}
     ]
   }
 ];

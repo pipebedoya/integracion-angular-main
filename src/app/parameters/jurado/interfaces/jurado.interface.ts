@@ -5,4 +5,5 @@ export class Jurado {
     correo?:       string;
     entidad?:      string;
     clave?:        string;
+   
 }

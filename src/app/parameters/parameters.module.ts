@@ -36,6 +36,16 @@ import { ProponenteCreateComponent } from './proponente/pages/proponente-create/
 import { ProponenteDeleteComponent } from './proponente/pages/proponente-delete/proponente-delete.component';
 import { ProponenteReadComponent } from './proponente/pages/proponente-read/proponente-read.component';
 import { ProponenteUpdateComponent } from './proponente/pages/proponente-update/proponente-update.component';
+import { EstadoCreateComponent } from './estado/pages/estado-create/estado-create.component';
+import { EstadoDeleteComponent } from './estado/pages/estado-delete/estado-delete.component';
+import { EstadoUpdateComponent } from './estado/pages/estado-update/estado-update.component';
+import { EstadoReadComponent } from './estado/pages/estado-read/estado-read.component';
+import { TipoSolicitudCreateComponent } from './tipo-solicitud/pages/tipo-solicitud-create/tipo-solicitud-create.component';
+import { TipoSolicitudUpdateComponent } from './tipo-solicitud/pages/tipo-solicitud-update/tipo-solicitud-update.component';
+import { TipoSolicitudDeleteComponent } from './tipo-solicitud/pages/tipo-solicitud-delete/tipo-solicitud-delete.component';
+import { TipoSolicitudReadComponent } from './tipo-solicitud/pages/tipo-solicitud-read/tipo-solicitud-read.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ProfileComponent } from './jurado/pages/profile/profile.component';
 
 
 
@@ -74,13 +84,23 @@ import { ProponenteUpdateComponent } from './proponente/pages/proponente-update/
       ProponenteDeleteComponent,
       ProponenteReadComponent,
       ProponenteUpdateComponent,
+      EstadoCreateComponent,
+      EstadoDeleteComponent,
+      EstadoUpdateComponent,
+      EstadoReadComponent,
+      TipoSolicitudCreateComponent,
+      TipoSolicitudUpdateComponent,
+      TipoSolicitudDeleteComponent,
+      TipoSolicitudReadComponent,
+      ProfileComponent,
   ],
   imports: [
     CommonModule,
     ParametersRoutingModule,
     PrimeNgModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class ParametersModule { }

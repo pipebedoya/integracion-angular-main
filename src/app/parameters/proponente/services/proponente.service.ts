@@ -31,11 +31,12 @@ export class ProponenteService {
     return this.http.post<Proponente>(`${this.url}/proponentes`,{
       documento:data.documento,
       primer_nombre:data.primer_nombre,
-      otros_nombre:data.otros_nombres,
+      otros_nombres:data.otros_nombres,
       primer_apellido:data.primer_apellido,
       segundo_apellido:data.segundo_apellido,
       correo:data.correo,
-      celular:data.celular
+      celular:data.celular,
+      id_tipovinculacion:data.id_tipovinculacion
     },
     {
       headers: new HttpHeaders({
@@ -48,11 +49,12 @@ export class ProponenteService {
     return this.http.put<Proponente>(`${this.url}/proponentes/${data.id}`,{
       documento:data.documento,
       primer_nombre:data.primer_nombre,
-      otros_nombre:data.otros_nombres,
+      otros_nombres:data.otros_nombres,
       primer_apellido:data.primer_apellido,
       segundo_apellido:data.segundo_apellido,
       correo:data.correo,
-      celular:data.celular
+      celular:data.celular,
+      id_tipovinculacion: data.id_tipovinculacion
     },
     {
       headers: new HttpHeaders({

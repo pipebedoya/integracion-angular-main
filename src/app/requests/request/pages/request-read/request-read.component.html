@@ -1,4 +1,4 @@
-<!-- <div class="card" >
+<div class="card" >
 
     <p-toolbar styleClass="p-mb-4">
         <ng-template pTemplate="left">
@@ -38,13 +38,19 @@
                                 class="p-button-rounded p-button-success p-mr-2"
                                 style="margin-right: 5px;"
                                 type="button"
-                                [routerLink]="['/request/request-update', proponente.id]" 
+                                [routerLink]="['/request/request-update', request.id]" 
                                 >
                         </button>
                         <button pButton pRipple icon="pi pi-trash" 
                                 class="p-button-rounded p-button-warning"
                                 type="button"
-                                [routerLink]="['/request/request-delete', proponente.id]" 
+                                [routerLink]="['/request/request-delete', request.id]" 
+                                >
+                        </button>
+                        <button pButton pRipple icon="pi pi-trash" 
+                                class="p-button-rounded p-button-warning"
+                                type="button"
+                                (click)=download(request.trabajo) 
                                 >
                         </button>
                     </td>
@@ -56,4 +62,4 @@
 </div>
 
 <router-outlet></router-outlet>
- -->
+

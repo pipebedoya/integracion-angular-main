@@ -1,103 +1,97 @@
-<!-- <form [formGroup]="dataForm" 
+<form [formGroup]="dataForm" 
 class="login100-form" 
 autocomplete="off"
 class="text-layout mt-2">
 
 <div class="p-fluid p-formgrid grid text-layout">
     <div class="p-field col-12 md:col-6">
+       <label>Fecha</label>
+       <input type='date' [ngModel]='fecha | date:"yyyy-MM-dd" ' (ngModelChange)='fecha=$event'   
+            pInputText  readonly
+            formControlName="fecha_radicado" > 
+        </div>
+
+    <div class="p-field col-12 md:col-6" >
         <label> Nombre del Trabajo</label>
         <input type="text" 
                pInputText       
-               formControlName="nombre_trabajo"> 
-    </div>
-    <div class="errorvalidacion" class="p-field col-12 ">
-      <label *ngIf="dataForm.controls['documento'].errors && (dataForm.controls['documento'].dirty || dataForm.controls['documento'].touched)">
+               formControlName="nombre_trabajo">  
+        <div class="errorvalidacion" class="p-field col-6 ">
+        <label *ngIf="dataForm.controls['nombre_trabajo'].errors && (dataForm.controls['nombre_trabajo'].dirty || dataForm.controls['nombre_trabajo'].touched)">
            Campo invalido, por favor valide la información
-      </label>
-    </div> 
+         </label>
+        </div>     
+    </div>
+    
 
   <div class="p-field col-12 md:col-6">
-      <label>Primer Nombre</label>
+      <label>Descripción</label>
       <input type="text" 
              pInputText       
-             formControlName="primer_nombre"> 
-  </div>
-  <div class="errorvalidacion" class="p-field col-12 ">
-    <label *ngIf="dataForm.controls['primer_nombre'].errors && (dataForm.controls['primer_nombre'].dirty || dataForm.controls['primer_nombre'].touched)">
+             formControlName="descripcion"> 
+      <div class="errorvalidacion" class="p-field col-6 ">
+      <label *ngIf="dataForm.controls['descripcion'].errors && (dataForm.controls['descripcion'].dirty || dataForm.controls['descripcion'].touched)">
          Campo invalido, por favor valide la información
-    </label>
-  </div> 
-
-    <div class="p-field col-12 md:col-6">
-        <label>otros Nombres</label>
-        <input type="text" 
-               pInputText       
-               formControlName="otros_nombres"> 
-    </div>
-    <div class="errorvalidacion" class="p-field col-12 ">
-      <label *ngIf="dataForm.controls['otros_nombres'].errors && (dataForm.controls['otros_nombres'].dirty || dataForm.controls['otros_nombres'].touched)">
-           Campo invalido, por favor valide la información
-      </label>
-    </div> 
+       </label>
+      </div>    
+  </div>
+  
+      <div class="p-field col-12 md:col-6">
+         <label for="id_tiposolicitud">Tipo de Solicitud</label>
+          <select id="seleTipoSoli"  formControlName="id_tiposolicitud">
+            <option *ngFor="let type of typeRequestList" value="{{type.id}}">{{type.nombre}}</option>
+          </select>        
+     </div>
 
       <div class="p-field col-12 md:col-6">
-            <label>Primer Apellido</label>
-            <input type="text" 
-                   pInputText       
-                   formControlName="primer_apellido"> 
-        </div>
-        <div class="errorvalidacion" class="p-field col-12 ">
-          <label *ngIf="dataForm.controls['primer_apellido'].errors && (dataForm.controls['primer_apellido'].dirty || dataForm.controls['primer_apellido'].touched)">
-               Campo invalido, por favor valide la información
-          </label>
-        </div> 
+            <label for="id_modalidad">Modalidad</label>
+          <select id="seleMod"  formControlName="id_modalidad">
+            <option *ngFor="let mod of modality" value="{{mod.id}}">{{mod.nombre}}</option>
+          </select>  
+      </div>
 
         <div class="p-field col-12 md:col-6">
-            <label>Segundo Apellido</label>
-            <input type="text" 
-                   pInputText       
-                   formControlName="segundo_apellido"> 
-        </div>
-        <div class="errorvalidacion" class="p-field col-12 ">
-          <label *ngIf="dataForm.controls['segundo_apellido'].errors && (dataForm.controls['segundo_apellido'].dirty || dataForm.controls['segundo_apellido'].touched)">
-               Campo invalido, por favor valide la información
-          </label>
-        </div> 
+            <label for="id_areainvestigacion">Area de Investigacion</label>
+            <select id="seleArea"  formControlName="id_areainvestigacion">
+              <option *ngFor="let a of area" value="{{a.id}}">{{a.nombre}}</option>
+            </select>      
+       </div>
+
+       <div class="p-field col-12 md:col-6">
+      <label for="id_estado" >Estado</label>
+      <select id="seleEstado"  formControlName="id_estado">
+        <option *ngFor="let e of estado" value="{{e.id}}">{{e.nombre}}</option>
+      </select>   
+  </div>
 
   <div class="p-field col-12 md:col-6">
-      <label >Email</label>
-      <input type="email" 
-             pInputText
-             formControlName="correo"> 
-  </div>
-  <div class="errorvalidacion" class="p-field col-12 ">
-    <label *ngIf="dataForm.controls['correo'].errors && (dataForm.controls['correo'].dirty || dataForm.controls['correo'].touched)">
-         Campo invalido, por favor valide la información
-    </label>
-  </div> 
-  
+    <label for="proponente" >Proponente</label>
+    <select id="selePropo"  formControlName="proponente">
+      <option *ngFor="let p of proponente" value="{{p.id}}">{{p.primer_nombre}}{{p.otros_nombres}}{{p.primer_apellido}}{{p.segundo_apellido}}</option>
+    </select>   
+</div>
+
   <div class="p-field col-12 md:col-6">
-      <label>Celular</label>
-      <input type="number" 
-             pInputText
-             formControlName="celular"> 
-  </div>
-  <div class="errorvalidacion" class="p-field col-12 ">
-    <label *ngIf="dataForm.controls['celular'].errors && (dataForm.controls['celular'].dirty || dataForm.controls['celular'].touched)">
-         Campo invalido, por favor valide la información
-    </label>
-  </div> 
+    <form [formGroup]="documentForm">
+      <input class="btn orange" type="file" (change)="UploadDocument($event)" name="document"  /> 
+      &nbsp;<button class="btn btn-success " type="button" (click)="SubmitFileToServer()" > Cargar Documento</button>
+        </form>
+   </div>
 
-  <div class="p-field col-12 ">
+   <h5>Advanced</h5>
+    <p-fileUpload name="cargar"  (click)="CargaArchivo($event)" >
+    </p-fileUpload>
 
+   <div class="p-field col-12 ">
+     
       <button pButton type="button"
               icon="pi pi-check "
               label="Create" 
               class="p-button-outlined p-button-success"
               (click)="SaveRecord()">
       </button>
-  </div>
+   </div>
 
 </div>
 </form>
- -->
+

@@ -20,15 +20,15 @@ export class ComiteService {
   }
 
    GetRecordList(): Observable<Comite[]>{
-     return this.http.get<Comite[]>(`${this.url}/Comites`);
+     return this.http.get<Comite[]>(`${this.url}/tipocomites`);
    }
 
    SearchRecord(id:number): Observable<Comite>{
-    return this.http.get<Comite>(`${this.url}/Comites/${id}`);
+    return this.http.get<Comite>(`${this.url}/tipocomites/${id}`);
   }
  
    SaveRecord(data: Comite): Observable<Comite>{
-    return this.http.post<Comite>(`${this.url}/Comites`,{
+    return this.http.post<Comite>(`${this.url}/tipocomites`,{
       nombre:data.nombre
     },
     {
@@ -39,7 +39,7 @@ export class ComiteService {
   }
 
   EditRecord(data: Comite): Observable<Comite>{
-    return this.http.put<Comite>(`${this.url}/Comites/${data.id}`,{
+    return this.http.put<Comite>(`${this.url}/tipocomites/${data.id}`,{
       nombre:data.nombre
     },
     {
@@ -50,7 +50,7 @@ export class ComiteService {
   }
 
   RemoveRecord(id:number): Observable<any>{
-    return this.http.delete<any>(`${this.url}/Comites/${id}`,
+    return this.http.delete<any>(`${this.url}/tipocomites/${id}`,
     {
       headers: new HttpHeaders({
         Authorization: `Bearer ${this.tk}`

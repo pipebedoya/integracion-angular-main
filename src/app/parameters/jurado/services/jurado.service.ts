@@ -20,15 +20,15 @@ export class JuradoService {
   }
 
    GetRecordList(): Observable<Jurado[]>{
-     return this.http.get<Jurado[]>(`${this.url}/Jurados`);
+     return this.http.get<Jurado[]>(`${this.url}/jurados`);
    }
 
    SearchRecord(id:number): Observable<Jurado>{
-    return this.http.get<Jurado>(`${this.url}/Jurados/${id}`);
+    return this.http.get<Jurado>(`${this.url}/jurados/${id}`);
   }
  
    SaveRecord(data: Jurado): Observable<Jurado>{
-    return this.http.post<Jurado>(`${this.url}/Jurados`,{
+    return this.http.post<Jurado>(`${this.url}/jurados`,{
       nombre:data.nombre,
       correo:data.correo,
       celular:data.celular,
@@ -42,7 +42,7 @@ export class JuradoService {
   }
 
   EditRecord(data: Jurado): Observable<Jurado>{
-    return this.http.put<Jurado>(`${this.url}/Jurados/${data.id}`,{
+    return this.http.put<Jurado>(`${this.url}/jurados/${data.id}`,{
       nombre:data.nombre,
       correo:data.correo,
       celular:data.celular,
@@ -56,12 +56,19 @@ export class JuradoService {
   }
 
   RemoveRecord(id:number): Observable<any>{
-    return this.http.delete<any>(`${this.url}/Jurados/${id}`,
+    return this.http.delete<any>(`${this.url}/jurados/${id}`,
     {
       headers: new HttpHeaders({
         Authorization: `Bearer ${this.tk}`
       })
     });
   }
+
+
+   RequestsJurado(id:number){
+    return this.http.get<Jurado[]>(`${this.url}/jurados/${id}/?filter={"include":[{"relation":"juradoxsolicituds"}]}`);
+
+   }
+
 
 }

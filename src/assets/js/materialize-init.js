@@ -4,3 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
   });
+
+  function InitSelect(selectId){
+    var elems = document.querySelector('#'+selectId);
+    var instances = M.FormSelect.init(elems, {});
+   }

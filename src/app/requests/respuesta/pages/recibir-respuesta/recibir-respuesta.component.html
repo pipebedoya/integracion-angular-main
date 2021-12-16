@@ -1,0 +1,19 @@
+<p>Confirmación</p>
+<div class="p-field col-12 md:col-6">
+<label> Codigo de Confirmación</label>
+<input type="number" [(ngModel)]="codigo"> 
+<label> Observaciones</label>
+<textarea type="text" [(ngModel)]="observaciones" ></textarea>
+<br>
+<h5>¿Desea evaluar el trabajo?</h5>
+<br>
+<button pButton type="button" icon="pi pi-check "  label="ACEPTO" 
+class="p-button-outlined p-button-success"
+(click)="RecibirRespuesta('ACEPTO')" routerlink="/auth">
+</button>
+<button pButton type="button" icon="pi pi-check "  label="RECHAZO" 
+class="p-button-outlined p-button-success"
+(click)="RecibirRespuesta('RECHAZO')">
+</button>
+
+</div>
